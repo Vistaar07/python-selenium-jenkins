@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out code...'
-                git branch: 'main', url: 'https://github.com/Vistaar07/python-selenium-jenkinsgit'
+                git branch: 'main', url: 'https://github.com/Vistaar07/python-selenium-jenkins.git'
             }
         }
         stage('Setup Environment') {
