@@ -1,11 +1,10 @@
-# test_app.py
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import threading
 import time
-from app import app # Import your Flask app
+from app import app
 
 @pytest.fixture(scope="module")
 def app_url():
@@ -29,11 +28,6 @@ def driver():
     web_driver.quit()
 
 def test_homepage_title(driver, app_url):
-    """
-    GIVEN a running Flask application
-    WHEN the user navigates to the homepage
-    THEN the correct welcome message should be displayed
-    """
     driver.get(app_url)
     welcome_text = driver.find_element(By.TAG_NAME, "h1").text
     assert "Welcome to the Python Test App!" in welcome_text
